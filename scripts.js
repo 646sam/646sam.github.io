@@ -8,6 +8,9 @@ var number1;
 var number2;
 var operator;
 var questionOutput;
+var correctAnswerCounter = 0;
+var incorrectAnswerCounter = 0;
+var incorrectAnswers = "";
 
 // If easy difficult button is clicked on, user gets an alert message confirming the selection
 function easyDifficulty() {
@@ -114,9 +117,12 @@ function question1() {
         questionOutput = generateQuestion(number1, number2, operator);
         questionAnswer = generateAnswer(number1, number2, operator);
         document.getElementById("q2").innerHTML = questionOutput;
+        correctAnswerCounter++;
     } else {
         answeredIncorrectly();
         document.getElementById("q1Answer").style.background = "#ff335c";
+        incorrectAnswerCounter++;
+        incorrectAnswers += "Question 1: " + questionOutput + //NEW LINE HERE;
     }
 
     document.getElementById("brForQ1").innerHTML = '<br>';
@@ -138,9 +144,12 @@ function question2() {
         questionOutput = generateQuestion(number1, number2, operator);
         questionAnswer = generateAnswer(number1, number2, operator);
         document.getElementById("q3").innerHTML = questionOutput;
+        correctAnswerCounter++;
     } else {
         answeredIncorrectly();
         document.getElementById("q2Answer").style.background = "#ff335c";
+        incorrectAnswerCounter++;
+        incorrectAnswers += "/n" + questionOutput + "/n";
     }
 
     document.getElementById("brForQ2").innerHTML = '<br>';
@@ -163,9 +172,12 @@ function question3() {
         questionOutput = generateQuestion(number1, number2, operator);
         questionAnswer = generateAnswer(number1, number2, operator);
         document.getElementById("q4").innerHTML = questionOutput;
+        correctAnswerCounter++;
     } else {
         answeredIncorrectly();
         document.getElementById("q3Answer").style.background = "#ff335c";
+        incorrectAnswerCounter++;
+        incorrectAnswers += "/n" + questionOutput + "/n";
     }
 
     document.getElementById("brForQ3").innerHTML = '<br>';
@@ -188,9 +200,12 @@ function question4() {
         questionOutput = generateQuestion(number1, number2, operator);
         questionAnswer = generateAnswer(number1, number2, operator);
         document.getElementById("q5").innerHTML = questionOutput;
+        correctAnswerCounter++;
     } else {
         answeredIncorrectly();
         document.getElementById("q4Answer").style.background = "#ff335c";
+        incorrectAnswerCounter++;
+        incorrectAnswers += "/n" + questionOutput + "/n";
     }
 
     document.getElementById("brForQ4").innerHTML = '<br>';
@@ -204,14 +219,32 @@ function question5() {
     if (document.getElementById("q5Answer").innerHTML.includes("Well done!") == true) {
         answeredCorrectly();
         document.getElementById("q5Answer").style.background = "#3dff7e";
+        correctAnswerCounter++;
     } else {
         answeredIncorrectly();
         document.getElementById("q5Answer").style.background = "#ff335c";
+        incorrectAnswerCounter++;
+        incorrectAnswers += "/n" + questionOutput + "/n";
     }
+
+
 
     document.getElementById("brForQ5").innerHTML = '<br>';
     document.getElementById("showOutput5").style.display = "block";
 
+}
+
+
+function feedBack() {
+
+    var noCorrectAnswers = "Whoops, unfortunately you answered "
+    var atLeastOneCorrectAnswer = "Well Done! You ansered "
+
+    if (correctAnswerCounter < 1) {
+        alert(noCorrectAnswers + correctAnswerCounter + " correctly, and " + incorrectAnswerCounter + " incorrectly. The question(s) you answered incorrectly were: \n" + incorrectAnswers);
+    } else {
+        alert(atLeastOneCorrectAnswer + correctAnswerCounter + " correctly, and " + incorrectAnswerCounter + " incorrectly. " + "The question(s) you answered incorrectly were: \n" + incorrectAnswers);
+    }
 }
 
 
