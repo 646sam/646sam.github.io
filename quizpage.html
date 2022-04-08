@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="scripts.js"></script>
+    <meta charset="UTF -8" />
+    <title>Quiz</title>
+</head>
+
+<body>
+
+    <a id="top"></a>
+
+    <section>
+
+        <nav>
+            <div id="quiz-logo"><img src="images/quizLogo.png" alt="Quiz Logo Image"></div>
+            <ul>
+                <br>
+                <li><button class="linkButton"><a href="index.html">Click me to return to home</a></button></li>
+                <li><button class="linkButton"><a href="resultspage.html">Click me for Results & Feedback</a></button>
+                </li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <div id="quiz-difficulty">
+        <p style="display:inline;float:left">Select Difficulty</p>
+    </div>
+
+    <div id="quiz-timer">
+        <p style="display:inline;float:right">Timer</p>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="difficulty-buttons">
+        <button class="button" id="easyMode" onclick="easyDifficulty()">Easy</button>
+        <button class="button" id="mediumMode" onclick="mediumDifficulty()">Medium</button>
+        <button class="button" id="hardMode" onclick="hardDifficulty()">Hard</button>
+    </div>
+
+    <div class="timer">
+        <button class="button" id="timerOffId" onclick="timerOff()">Off</button>
+        <button class="button" id="timerOnId" onclick="timerOn()">On</button>
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+    <button class="startQuizButton" onclick="startQuiz()">Start Quiz</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="quiz-questions">
+
+        <br>
+        <br>
+        <br>
+
+        <button class="showQuestion" id="hideQuestion1" onclick="showQuestion(this)">Show Question 1</button>
+        <p id="q1"></p>
+        <input type="number" id="id-q1">
+        <button onclick="question1()">Submit Answer</button>
+        <p id="brForQ1"></p>
+        <div class="ouputAnswer" id="showOutput1">
+            <p id="q1Answer"></p>
+        </div>
+        <p id="brForQ1"></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <button class="showQuestion" id="hideQuestion2" onclick="showQuestion(this)">Show Question 2</button>
+        <p id="q2"></p>
+        <input type="number" id="id-q2">
+        <button onclick="question2()">Submit Answer</button>
+        <p id="brForQ2"></p>
+        <div class="ouputAnswer" id="showOutput2">
+            <p id="q2Answer"></p>
+        </div>
+        <p id="brForQ2"></p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <button class="showQuestion" id="hideQuestion3" onclick="showQuestion(this)">Show Question 3</button>
+        <p id="q3"></p>
+        <input type="number" id="id-q3">
+        <button onclick="question3()">Submit Answer</button>
+        <p id="brForQ3"></p>
+        <div class="ouputAnswer" id="showOutput3">
+            <p id="q3Answer"></p>
+        </div>
+        <p id="brForQ3"></p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <button class="showQuestion" id="hideQuestion4" onclick="showQuestion(this)">Show Question 4</button>
+        <p id="q4"></p>
+        <input type="number" id="id-q4">
+        <button onclick="question4()">Submit Answer</button>
+        <p id="brForQ4"></p>
+        <div class="ouputAnswer" id="showOutput4">
+            <p id="q4Answer"></p>
+        </div>
+        <p id="brForQ4"></p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <button class="showQuestion" id="hideQuestion5" onclick="showQuestion(this)">Show Question 5</button>
+        <p id="q5"></p>
+        <input type="number" id="id-q5">
+        <button onclick="question5()">Submit Answer</button>
+        <p id="brForQ5"></p>
+        <div class="ouputAnswer" id="showOutput5">
+            <p id="q5Answer"></p>
+        </div>
+        <p id="brForQ5"></p>
+
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <a href="#top"><button class="showQuestion">Click me to return to the top of the page!</button></a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <a href="#top"><button class="showQuestion" onclick="startQuiz()">Click me to start a new quiz!</button></a>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <footer> &copy; 2022 - Sam Al-Khamis - All rights reserved </footer>
+
+</body>
+
+</html>
