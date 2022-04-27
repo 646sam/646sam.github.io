@@ -122,7 +122,7 @@ function question1() {
         answeredIncorrectly();
         document.getElementById("q1Answer").style.background = "#ff335c";
         incorrectAnswerCounter++;
-        incorrectAnswers += "Question 1: " + questionOutput + //NEW LINE HERE;
+        incorrectAnswers += "Question 1: " + questionOutput; // + //NEW LINE HERE;
     }
 
     document.getElementById("brForQ1").innerHTML = '<br>';

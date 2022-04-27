@@ -3,14 +3,19 @@ a {
     text-decoration: none;
 }
 
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .linkButton {
     background-color: #929292;
     padding: 16px 32px;
-    text-align: center;
+    padding-left: 20px 30px;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -70,7 +75,6 @@ li {
     padding: 10px 35px;
     text-align: center;
     text-decoration: none;
-    
     font-size: 16px;
     cursor: pointer;
     float: left;
@@ -137,7 +141,6 @@ li {
     background-color: #cfcfcf;
 }
 
-
 .showQuestion {
     background-color: #929292;
     color: white;
@@ -162,11 +165,6 @@ li {
     background-color: #cfcfcf;
 }
 
-
-
-
-
-
 .timer {
     padding: 0% 20%;
 }
@@ -176,7 +174,7 @@ li {
     color: #525252;
     padding: 10px 30px;
     text-align: center;
-    text-decoration: none;    
+    text-decoration: none;
     font-size: 16px;
     cursor: pointer;
     float: right;
