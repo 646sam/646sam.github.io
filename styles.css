@@ -10,16 +10,15 @@ body {
 }
 
 .linkButton {
-    background-color: #929292;
-    padding: 16px 32px;
-    padding-left: 20px 30px;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
     border: 3px solid #CA9C6C;
+    background-color: #929292;
+    padding: 16px 32px;
+    position: relative;
+    right: 18%;
 }
 
 .linkButton:hover {

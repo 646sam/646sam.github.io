@@ -12,6 +12,8 @@ var correctAnswerCounter = 0;
 var incorrectAnswerCounter = 0;
 var incorrectAnswers = "";
 
+
+
 // If easy difficult button is clicked on, user gets an alert message confirming the selection
 function easyDifficulty() {
     difficultyBorderColours("easy");
@@ -70,6 +72,19 @@ function timerOn() {
     timerOffId.style.border = "3px solid #CA9C6C";
     timerOnId.style['text-decoration'] = 'underline';
     timerOffId.style['text-decoration'] = 'none';
+
+    var timerDuration;
+    if (easyMode) {
+        timerDuration = 600000; // 10 minutes 
+    } else if (mediumMode) {
+        timerDuration = 420000; // 7 minutes
+    } else if (hardMode) {
+        timerDuration = 300000; // 5 minutes
+    }
+
+    alert("Timer for " + ((timerDuration / 60) / (1000)) + " minutes started!");
+
+    setTimeout(() => { alert("Whoops! Looks like times up! Feel free to finish the rest of the quiz :)") }, timerDuration)
 }
 
 
