@@ -36,6 +36,7 @@ function hardDifficulty() {
     easyMode = false;
 }
 
+// Set colour of seleted difficulty to change, and return the rest to normal upon selection
 function difficultyBorderColours(difficultySelected) {
     var easy = document.getElementById("easyMode");
     var medium = document.getElementById("mediumMode");
@@ -67,6 +68,7 @@ function difficultyBorderColours(difficultySelected) {
 
 }
 
+// Function that activates timer based on difficulty selected
 function timerOn() {
     timerOnId.style.border = "3px solid #3dff7e";
     timerOffId.style.border = "3px solid #CA9C6C";
@@ -75,11 +77,11 @@ function timerOn() {
 
     var timerDuration;
     if (easyMode) {
-        timerDuration = 600000; // 10 minutes 
+        timerDuration = 600000; // 10 minutes for easy mode
     } else if (mediumMode) {
-        timerDuration = 420000; // 7 minutes
+        timerDuration = 420000; // 7 minutes for medium mode
     } else if (hardMode) {
-        timerDuration = 300000; // 5 minutes
+        timerDuration = 300000; // 5 minutes for hard mode
     }
 
     alert("Timer for " + ((timerDuration / 60) / (1000)) + " minutes started!");
@@ -88,20 +90,23 @@ function timerOn() {
 }
 
 
+// Function to turn off the timer
 function timerOff(buttonId) {
+    alert("Timer is now off.")
     timerOnId.style.borderColor = "#CA9C6C";
     timerOffId.style.border = "3px solid #3dff7e";
     timerOffId.style['text-decoration'] = 'underline';
     timerOnId.style['text-decoration'] = 'none';
+    setTimeout(() => { alert("It seems as though you have been on this page for a while!") }, 9999999999999) // When timer turned off, set timer to unrealistic countdown 
 }
 
 
-
+// Function that revels the question that is clicked on
 function showQuestion(buttonId) {
     buttonId.style.display = 'none';
 }
 
-
+// Function that starts the quiz and sets relevant variables
 function startQuiz() {
     setUpNewQuiz();
 
@@ -117,7 +122,7 @@ function startQuiz() {
 
 
 
-
+// Function that then calls other functions, to generate, display, and comapre the answer to, question 1
 function question1() {
 
     let usersAnswer = document.getElementById("id-q1").value;
@@ -137,14 +142,14 @@ function question1() {
         answeredIncorrectly();
         document.getElementById("q1Answer").style.background = "#ff335c";
         incorrectAnswerCounter++;
-        incorrectAnswers += "Question 1: " + questionOutput; // + //NEW LINE HERE;
+        incorrectAnswers += "Question 1. " + questionOutput + ", you answered: " + usersAnswer + " \n ";
     }
 
     document.getElementById("brForQ1").innerHTML = '<br>';
     document.getElementById("showOutput1").style.display = "block";
 }
 
-
+// Function that then calls other functions, to generate, display, and comapre the answer to, question 2
 function question2() {
 
     let usersAnswer = document.getElementById("id-q2").value;
@@ -164,7 +169,7 @@ function question2() {
         answeredIncorrectly();
         document.getElementById("q2Answer").style.background = "#ff335c";
         incorrectAnswerCounter++;
-        incorrectAnswers += "/n" + questionOutput + "/n";
+        incorrectAnswers += "Question 2. " + questionOutput + ", you answered: " + usersAnswer + " \n ";
     }
 
     document.getElementById("brForQ2").innerHTML = '<br>';
@@ -172,7 +177,7 @@ function question2() {
 
 }
 
-
+// Function that then calls other functions, to generate, display, and comapre the answer to, question 3
 function question3() {
 
     let usersAnswer = document.getElementById("id-q3").value;
@@ -192,7 +197,7 @@ function question3() {
         answeredIncorrectly();
         document.getElementById("q3Answer").style.background = "#ff335c";
         incorrectAnswerCounter++;
-        incorrectAnswers += "/n" + questionOutput + "/n";
+        incorrectAnswers += "Question 3. " + questionOutput + ", you answered: " + usersAnswer + " \n ";
     }
 
     document.getElementById("brForQ3").innerHTML = '<br>';
@@ -200,7 +205,7 @@ function question3() {
 
 }
 
-
+// Function that then calls other functions, to generate, display, and comapre the answer to, question 4
 function question4() {
 
     let usersAnswer = document.getElementById("id-q4").value;
@@ -220,7 +225,7 @@ function question4() {
         answeredIncorrectly();
         document.getElementById("q4Answer").style.background = "#ff335c";
         incorrectAnswerCounter++;
-        incorrectAnswers += "/n" + questionOutput + "/n";
+        incorrectAnswers += "Question 4. " + questionOutput + ", you answered: " + usersAnswer + " \n ";
     }
 
     document.getElementById("brForQ4").innerHTML = '<br>';
@@ -228,6 +233,7 @@ function question4() {
 
 }
 
+// Function that then calls other functions, to generate, display, and comapre the answer to, question 5
 function question5() {
     let usersAnswer = document.getElementById("id-q5").value;
     document.getElementById("q5Answer").innerHTML = outputMessageToUser(questionOutput, questionAnswer, usersAnswer);
@@ -239,7 +245,7 @@ function question5() {
         answeredIncorrectly();
         document.getElementById("q5Answer").style.background = "#ff335c";
         incorrectAnswerCounter++;
-        incorrectAnswers += "/n" + questionOutput + "/n";
+        incorrectAnswers += "Question 5. " + questionOutput + ", you answered: " + usersAnswer + " \n ";
     }
 
 
@@ -249,22 +255,21 @@ function question5() {
 
 }
 
-
+// Function that provides feedback on current quiz
 function feedBack() {
-
     var noCorrectAnswers = "Whoops, unfortunately you answered "
-    var atLeastOneCorrectAnswer = "Well Done! You ansered "
+    var atLeastOneCorrectAnswer = "Well Done! You answered "
 
     if (correctAnswerCounter < 1) {
-        alert(noCorrectAnswers + correctAnswerCounter + " correctly, and " + incorrectAnswerCounter + " incorrectly. The question(s) you answered incorrectly were: \n" + incorrectAnswers);
+        alert(noCorrectAnswers + correctAnswerCounter + " correctly, and " + incorrectAnswerCounter + " incorrectly. The question(s) you answered incorrectly were: " + " \n " + incorrectAnswers + " \n ");
     } else {
-        alert(atLeastOneCorrectAnswer + correctAnswerCounter + " correctly, and " + incorrectAnswerCounter + " incorrectly. " + "The question(s) you answered incorrectly were: \n" + incorrectAnswers);
+        alert(atLeastOneCorrectAnswer + correctAnswerCounter + " correctly, and " + incorrectAnswerCounter + " incorrectly. " + "The question(s) you answered incorrectly were: " + " \n " + incorrectAnswers + " \n ");
     }
 }
 
 
 
-// implement show answer here
+// Function to display message to user based on if answer is correct or incorrect
 function outputMessageToUser(question, answer, usersAnswer) {
     var outputMessage;
 
@@ -277,7 +282,7 @@ function outputMessageToUser(question, answer, usersAnswer) {
 }
 
 
-
+// Function that takes in both numbers and operator and generates the user to later be used for comparison 
 function generateAnswer(number1, number2, operator) {
     let answer;
     if (operator == "+") {
@@ -296,7 +301,7 @@ function generateAnswer(number1, number2, operator) {
 
 // Function to get a random number based on the difficulty selected by the user
 function getRandomNumberBasedOnDifficulty() {
-    // Initialising variables, lowest and highest values for each difficulty
+    // Initialising range variables, lowest and highest values for each difficulty
     let randomNumber;
     var easyModeLowestNumber = 0;
     var easyModeHighestNumber = 15;
@@ -351,6 +356,7 @@ function generateQuestion(firstNumber, secondNumber, chosenSign) {
     return question;
 }
 
+// When new quiz is started, reveal first question and erase any input in any of the text boxes
 function setUpNewQuiz() {
 
     document.getElementById("hideQuestion1").style.display = "none";
@@ -388,11 +394,13 @@ function setUpNewQuiz() {
 
 }
 
+// If the answer is correct, a cheerful audio will play 
 function answeredCorrectly() {
     var audio = new Audio('audios/correctAnswer.mp3');
     audio.play();
 }
 
+// If the answer is incorrect, a discouraging audio will play
 function answeredIncorrectly() {
     var audio = new Audio('audios/incorrectAnswer.mp3');
     audio.play();
